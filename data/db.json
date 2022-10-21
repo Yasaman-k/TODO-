@@ -1,0 +1,78 @@
+{
+  "tasks": [
+    {
+      "id": 1665990559899,
+      "done": false,
+      "content": "delete function"
+    },
+    {
+      "id": 1665990846642,
+      "done": false,
+      "content": "routine tasks(daily task)"
+    },
+    {
+      "date": "Mon Oct 17 2022",
+      "done": false,
+      "content": " task for whole year",
+      "id": 1665990846643
+    },
+    {
+      "date": "Mon Oct 17 2022",
+      "done": false,
+      "content": "drag task to any category or section",
+      "id": 1665990846644
+    },
+    {
+      "date": "Mon Oct 17 2022",
+      "done": false,
+      "content": "STORE DATA BY VUEX OR SUSPENSE",
+      "category": "Please select one!",
+      "id": 1665990846661
+    },
+    {
+      "date": "Thu Oct 20 2022",
+      "done": false,
+      "content": "validation",
+      "category": "",
+      "id": 1665990846662
+    }
+  ],
+  "categories": [
+    {
+      "title": "daily routine",
+      "id": 4
+    },
+    {
+      "title": "year",
+      "id": 3
+    },
+    {
+      "title": "amir",
+      "id": 5
+    },
+    {
+      "title": "project",
+      "id": 6
+    },
+    {
+      "title": "todo app",
+      "id": 7
+    },
+    {
+      "title": "test",
+      "id": 8
+    },
+    {
+      "title": "kk",
+      "id": 9
+    },
+    {
+      "title": "oo",
+      "id": 10
+    },
+    {
+      "title": "",
+      "id": 11
+    }
+  ]
+}
