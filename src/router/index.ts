@@ -1,25 +1,51 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import TaskPage from '../views/TaskPage.vue'
+import HomePage from '../views/HomePage.vue'
+import NotFoundPage from '../views/NotFound.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'Home',
+    components: {
+      default: HomePage,
+      home: HomePage
+    },
+    meta: { title: 'TODO APP' }
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/create-task',
+    name: 'CreateTask',
+    components: {
+      default: TaskPage,
+      createTask: TaskPage
+    },
+    meta: { title: 'Create Task' }
+  },
+  // this must be the last object
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    components: {
+      default: NotFoundPage,
+      notFound: NotFoundPage
+    },
+    meta: { title: '404' }
   }
+// {
+//     path:"/:catchAll(.*)",
+//     redirect:"/not-found"
+// }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+
+// router.beforeEach((to, from, next) => {
+//   document.title = to.meta.title;
+//   next();
+// });
 
 export default router

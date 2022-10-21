@@ -1,30 +1,46 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="container" v-if="$route.name!=='NotFound'">
+    <header>
+      <div class="nav-link">
+        <img src="./assets/img/icons8-todo-list-100.png" />
+        <img src="./assets/img/futurama-bender-48.png"/>
+        <router-link class="title2 removeUnderline" to="/">Home</router-link>
+      </div>
+      <router-link class="removeUnderline" v-if="$route.name==='Home'" to="/create-task">
+        <h2 class="title2">
+          Create Task
+        </h2>
+      </router-link>
+    </header>
+    <router-view name="home"></router-view>
+    <router-view name="createTask"></router-view>
+  </div>
+  <router-view name="notFound" />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style scoped>
+.container {
+  margin: 2rem auto 8rem auto;
+  max-width: 70vw;
 }
 
-nav {
-  padding: 30px;
+.nav-link {
+  display: flex;
+  align-items: center;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 </style>
+
+<script>
+export default {
+  mounted () {
+    // console.log(this.$route);
+    // console.log(this.$route.name);
+  }
+}
+</script>
